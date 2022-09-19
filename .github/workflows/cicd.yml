@@ -1,0 +1,30 @@
+name: Contineous deployment
+on: [push]
+jobs: 
+  DeployStaticApp:
+    runs-on: ubuntu latest
+    env:
+      VERCEL_ORG_ID: ${{secrets.VERCEL_ORG_ID}}
+      VERCEL_PROJECT_ID: ${{secrets.VERCEL_PROJECT_ID}}
+      VERCEL_TOKEN: ${{secrets.VERCEL_TOKEN}}
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
+         with:
+          node-version: 16 
+      - name: installing the node modules
+        run: npm install
+      - name: building the project
+        run: npm run build
+      - run : |
+          cd build
+          mkdir .vercel 
+          cd .vercel
+          touch project.json
+          echo '{ "orgId: "$VERCEL_ORG_ID" , "projectId": "$VERCEL_PROJECT_ID" }' > project.json
+      - name: deploying the project
+        run: npm run deploy
+      - name: deployed the project
+        run: echo "deployment successfull"
+
+
