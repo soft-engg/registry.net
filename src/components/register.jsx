@@ -1,19 +1,25 @@
 import React from "react";
 export default function Register(){
+
+    function submitAction(Event){
+        Event.preventDefault();
+
+    }
+
     return <div className="min-h-screen  bg-gradient-to-br from-red-900 via-black to-gray-500 flex  justify-center items-center pl-2 ">
-        <div className=" bg-white/50  rounded-xl  sm:w-full lg:w-3/4  flex flex-col sm:flex-row h-fit ">
+        <div className=" bg-white/50  rounded-xl  sm:w-full lg:w-3/4 my-4 flex flex-col sm:flex-row h-fit ">
         
-            <div className="sm:w-1/2 sm:pb-4 bg-[url('./images/form.jpg')] bg-cover rounded-t-xl  sm:flex flex-col "  >
+            <div className="sm:w-1/2 sm:pb-4 bg-[url('./images/form.jpg')] bg-cover rounded-t-xl sm:rounded-l-xl sm:flex flex-col "  >
                 <h2 className="sm:text-3xl text-xl mb-1 font-bold font-serif text-center rounded-t-xl lg:rounded-tl-xl  bg-gradient-to-tr  py-1 text-gray-200">
                     Registry.io</h2>
-                    <p className="text-white px-2 text-lg font-mono overflow-hidden">
+                    <p className="text-white px-2 sm:text-xl lg:text-xl text-md font-mono overflow-hidden">
                         Registry.io is a platform made to help people finding each other online.
                         Connect with friends of different cultures and share the experiences.
                         Searching the right person for a job in your area ? There will be no worry 
                         Registry.io is best place to find people respective to their profession and Location. </p>
             </div>
 
-            <div className="sm:w-1/2 flex flex-col  sm:p-3 px-3 pb-2 mt-2 sm:pt-1 justify-between  text-md">
+            <form onSubmit={submitAction} className="sm:w-1/2 flex flex-col  sm:p-3 px-3 pb-2 mt-2 sm:pt-1 justify-between  text-md">
                 <h2 className="sm:text-2xl text-xl sm:hidden font-bold font-serif text-center bg-gradient-to-tr rounded-lg py-1 text-gray-200">
                     Registry.io</h2>
                 <h2 className="text-xl sm:text-2xl fotn-serif font-extrabold text-red-900">Register Here</h2>
@@ -25,15 +31,15 @@ export default function Register(){
                 focus:border-black-900 mt-2 rounded-md" ></input>
                 <input type="name" placeholder="Last Name" className="border-2 border-gray-400 w-3/4 text-md p-1 outline-none 
                 focus:border-black-900 mt-2 rounded-md focus:shadow-lg focus:shadow-black transition ease-in-out duration-1000" ></input>
-                 <input placeholder="Date Of Birth"  type="date" className="border-2 border-gray-400 w-3/4 text-md p-1 outline-none 
+                 <input placeholder="Date Of Birth" required type="date" className="border-2 border-gray-400 w-3/4 text-md p-1 outline-none 
                 focus:border-black-900 rounded-md mt-2 accent-pink-900 focus:shadow-lg focus:shadow-black transition ease-in-out duration-1000" />                
                 <div className="flex">
-                <input type="checkbox" className="accent-black mt-2 hover:accent-pink-600 hover:outline-black hover:outline-4 inline mr-1"/>
+                <input type="checkbox" className=" accent-black mt-2 hover:accent-pink-600 hover:outline-black hover:outline-4 inline mr-1"/>
                 <p className="text-md mt-2 font-mono">I accept the <span className="text-red-900 font-bold hover:text-white">term of use</span> and <span className="text-red-900 font-bold hover:text-white">privacy policy.</span></p>
                 </div>
                 
-                <button className="bg-red-900 font-bold text-white rounded-xl py-1 hover:shadow-lg hover:shadow-black transition ease-in-out duration-1000">Register me</button>
-            </div>
+                <button type="submit"  className="hover:bg-red-900  bg-red-900/90 font-bold text-white rounded-xl py-2 hover:shadow-lg hover:shadow-black transition ease-in-out duration-1000">Register me</button>
+            </form>
         </div>
 =
     </div>
