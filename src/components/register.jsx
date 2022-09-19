@@ -31,7 +31,7 @@ export default function Register(){
                 focus:border-black-900 mt-2 rounded-md" ></input>
                 <input type="name" placeholder="Last Name" className="border-2 border-gray-400 w-3/4 text-md p-1 outline-none 
                 focus:border-black-900 mt-2 rounded-md focus:shadow-lg focus:shadow-black transition ease-in-out duration-1000" ></input>
-                 <input placeholder="Date Of Birth" required type="date" className="border-2 border-gray-400 w-3/4 text-md p-1 outline-none 
+                 <input placeholder="Date Of Birth" type="date" className="border-2 border-gray-400 w-3/4 text-md p-1 outline-none 
                 focus:border-black-900 rounded-md mt-2 accent-pink-900 focus:shadow-lg focus:shadow-black transition ease-in-out duration-1000" />                
                 <div className="flex">
                 <input type="checkbox" className=" accent-black mt-2 hover:accent-pink-600 hover:outline-black hover:outline-4 inline mr-1"/>
